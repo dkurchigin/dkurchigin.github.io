@@ -1,18 +1,25 @@
 ---
 layout: page
-title: About
+title: /about/
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+Привет, Мир!
+ 
+Очень рад приветствовать тебя в моем маленьком, уютном бложике!
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+Основная тематика блога - мои опусы с программированием, контроллерами и 3D-печатью.
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+Хотя моя основная работа связана с системным и сетевым администрированием, меня очень увлекает схемотехника и микроконтроллеры. 
+
+Робототехника, автоматизация, "умные вещи" и аддитивные технологии занимают огромное пространство в голове и очень хотелось бы, чтобы какие-то мои маленькие проекты по чуть-чуть воплощались в жизнь.
+
+![me](/images/big.jpg)
 
 
-[jekyll-organization]: https://github.com/jekyll
+Меня можно найти: 
+
+* [ВКонтакте](https://vk.com/knife_in_your_spine)
+* [GitHub](https://github.com/dkurchigin)
+* [Tumblr](http://it-as-hobby.tumblr.com/)
+
