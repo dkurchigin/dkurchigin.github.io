@@ -1,0 +1,10 @@
+---
+layout: post
+title:  "Матрешка от Амперки"
+date:   2015-10-12 21:01:00 +0300
+categories: arduino amperka
+---
+![Набор от Амперки](/images/tumblr_nvqo9s0DHN1uh3r1eo1_1283.jpg)
+
+Купил себе новую игрушку от [**Амперки**](http://amperka.ru)! Взял себе **Матрешку** "[**Набор Y**](http://amperka.ru/product/matryoshka-y)" т.к. самый дешевый набор включает в себя очень мало радиоэлементов, а "[**Набор Z**](http://amperka.ru/product/matryoshka-z)" слишком дорог. В "[**Наборе Y**](http://amperka.ru/product/matryoshka-y)" в сравнении с "[**Набором Z**](http://amperka.ru/product/matryoshka-z)" отсутствуют лишь экран 16*2, светодиодная шкала, мотор и микросервопривод - меня это устроило.
+
