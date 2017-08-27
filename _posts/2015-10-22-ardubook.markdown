@@ -1,0 +1,9 @@
+---
+layout: post
+title:  "Изучаем Arduino. Джереми Блум"
+date:   2015-10-22 14:15:00 +0300
+categories: arduino books
+---
+![Изучаем Ардуино. Джереми Блум](/images/tumblr_nwddwqCGKa1uh3r1eo1_1282.jpg)
+
+Зацепил модную книжку в одном из [**магазинов своего города**](https://www.chitai-gorod.ru/shops/store/224396/?utm_source=admitad&utm_medium=cpo&utm_campaign=chitai&admitad_uid=82e8f706fa1d720014193eac4574aadf). Книжка, кстати, очень годная, если не хотите переплачивать - можно найти электронную версию на просторах интернета.
