@@ -1,0 +1,47 @@
+---
+layout: post
+title:  "Отправка почты из скрипта"
+date:   2015-11-30 09:00:00 +0300
+categories: linux programming
+---
+Привет!
+
+Сейчас я расскажу как я отправляю различную информацию на электронную почту через скрипты на **bash**.
+
+Вообще, существует 2 способа передачи сообщений:
+
+0. Передача через почтовую систему(**postfix**, **sendmail** и иже с ними).
+0. Использование [**smtp**](https://ru.wikipedia.org/wiki/SMTP) через почтовые сервисы([**gmail**](https://google.com), [**yandex**](https://www.yandex.ru/), [**yahoo**](https://www.yahoo.com/) и т.д.)
+
+В первом случае придется возится с настройкой машины, но это окупиться отправкой на различные ящики и скоростью отправки. Во втором ни с чем возиться не придется, но мы будем ограничены отправкой только на свой зарегистрированный почтовый ящик.
+
+Итак, у нас не так много свободного времени и сил, поэтому будем использовать **smtp**. В **Debian** я делаю так:
+
+Устанавливаю пакет **mailutils** и вместе с ним **ssmtp**.
+
+    aptitude install mailutils ssmtp
+
+Редактирую файл конфигурации **ssmtp.conf**, например для Яндекса.
+
+    nano /etc/ssmtp/ssmtp.conf
+
+Пример конфига, где **AuthUser** и **AuthPass** зарегистрированный в системе ящик и пароль. **UseTLS=YES** обязательно.
+
+    root = postmaster 
+    mailhub = smtp.yandex.ru:465 
+    rewriteDomain = yandex.ru 
+    hostname=debianvm 
+    AuthUser = xxxxx@yandex.ru 
+    AuthPass=password 
+    FromLineOverride=No 
+    UseTLS=YES
+
+Также редактирую файл **revaliases**.
+
+    nano /etc/ssmtp/revaliases
+
+    root:xxxxx@yandex.ru:smtp.yandex.ru:465 test:xxxxx@yandex.ru:smtp.yandex.ru:465
+
+Проверяю через консоль.
+
+    Echo «ssmtp working good» | mail -s «Email from console» yyyyy@yahoo.com
