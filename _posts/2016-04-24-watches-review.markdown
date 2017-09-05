@@ -20,7 +20,7 @@ categories: arduino programming
 
 - Китайская [**Arduino Nano**](https://ru.aliexpress.com/item/1PCS-Nano-3-0-controller-compatible-with-nano-CH340-USB-driver-NO-CABLE-for-Arduino-NANO/32473529871.html?dp=b3b7663955133352c3b7f3788a027df2&af=240682&cv=47843&afref=http%253A%252F%252Ft.umblr.com&mall_affr=pr3&aff_platform=aaf&cpt=1504545854821&sk=VnYZvQVf&aff_trace_key=9a1c35f46c6f4fc7bd922dc609b729bb-1504545854821-00944-VnYZvQVf)
 - [**LED**](https://www.chipdip.ru/product/cc04-41srwa)
-- [**RTC от Амперки**](http://amperka.ru/product/troyka-rtc)
+- [**RTC от Амперки**](http://amperka.ru/product/troyka-rtc?utm_source=itashobby&utm_medium=partner&utm_campaign=itashobby)
 - 74HC595*2
 - Резистор 220 Ом*14
 - Резистор10 кОм*4
