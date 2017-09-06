@@ -1,0 +1,12 @@
+---
+layout: post
+title:  "Radio-Radio"
+date:   2016-09-22 20:36:00 +0300
+categories: diy pcb
+---
+С Китая пришли приемник и передатчик на **433Мгц**, для моих радиоуправляемых проектов. Работоспособность проверял скетчами [**отсюда**](http://arduino-diy.com/arduino-radioperedatchik-RF-315-433-MHz), стандартные примеры из библы **VirtualWire** почему-то не заработали...
+
+![433_1](/images/tumblr_inline_odx282Sfwd1td8cty_501.jpg)
+
+![433_2](/images/tumblr_inline_odx28fDKge1td8cty_502.jpg)
+
