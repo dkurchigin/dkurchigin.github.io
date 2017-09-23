@@ -10,5 +10,11 @@ categories: 3d diy robots arduino
 
 **На борту**: косые шестеренки, длинный и короткий редуктор (с передаточным числом ~14) и подшипники.  
 
-![Бабина](/images/tumblr_fdplast1.jpg)
+![Вид сбоку](/images/tumblr_robot3.jpg)
+
+![Вид сверху](/images/tumblr_robot4.jpg)
+
+![Левый редуктор](/images/tumblr_robot5.jpg)
+
+![Правый редуктор](/images/tumblr_robot6.jpg)
 
