@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "RobotMK1 переделал корпус"
+title:  "RobotMK1: переделал корпус"
 date:   2016-10-30 16:18:00 +0300
 categories: arduino programming robots
 ---
