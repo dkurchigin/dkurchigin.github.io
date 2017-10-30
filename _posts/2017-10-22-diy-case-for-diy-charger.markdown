@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "DIY корпус для DIY li-ion зарядки"
+title:  "DIY корпус для DIY Li-ion зарядки"
 date:   2017-10-22 10:00:00 +0300
 categories: pcb diy 3d
 ---
