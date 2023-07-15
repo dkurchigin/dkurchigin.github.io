@@ -18,8 +18,4 @@ permalink: /about/
 
 
 Меня можно найти: 
-
-* [ВКонтакте](https://vk.com/dkurchigin)
 * [GitHub](https://github.com/dkurchigin)
-* [Tumblr](http://it-as-hobby.tumblr.com/)
-
