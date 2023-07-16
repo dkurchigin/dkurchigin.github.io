@@ -1,21 +1,18 @@
 {% extends "base.html" %}
 
 {% block content %}
-
     {% if articles %}
         <ul class="post-list">
-          {% for article in articles_page.object_list %}
-              <li>
-                <span class="post-meta">{{ article.date.strftime('%B %d, %Y') }}</span>
-                <h3>
-                  <a class="post-link" href="{{ article.url }}">
-                    {{ article.title }}
-                  </a>
-                </h3>
-              </li>
-          {% endfor %}
+            {% for article in articles_page.object_list %}
+                <li>
+                    <span class="post-meta">{{ article.date.strftime('%B %d, %Y') }}</span>
+                    <h3>
+                        <a class="post-link" href="{{ article.url }}">
+                            {{ article.title }}
+                        </a>
+                    </h3>
+                </li>
+            {% endfor %}
         </ul>
-      {% endif %}
-
+    {% endif %}
 {% endblock content %}
-

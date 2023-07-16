@@ -1,20 +1,20 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
-
+  <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
       <header class="post-header">
-        <h1 class="post-title p-name" itemprop="name headline">{{ article.title }}</h1>
-        <p class="post-meta">
-          <time class="dt-published" datetime="{{ article.date }}" itemprop="datePublished">
-            {{ article.date.strftime('%B %d, %Y') }}
-          </time>
+          <h1 class="post-title p-name" itemprop="name headline">{{ article.title }}</h1>
+          <p class="post-meta">
+              <time class="dt-published" datetime="{{ article.date }}" itemprop="datePublished">
+                  {{ article.date.strftime('%B %d, %Y') }}
+              </time>
+          </p>
       </header>
 
       <div class="post-content e-content" itemprop="articleBody">
-        {{ article.content }}
+          {{ article.content }}
       </div>
 
       <a class="u-url" href="{{ article.url }}" hidden></a>
-    </article>
+  </article>
 {% endblock %}

@@ -2,6 +2,7 @@ Title: Переезд с Jekyll на Pelican
 Summary: Перенес старый блог с Jekyll на Pelican и скорректировал тематику
 Date: 2023-07-16 16:00
 Tags: python, pelican, jekyll
+Url: moved-from-jekyll
 
 Привет, Мир!
 
