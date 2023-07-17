@@ -3,7 +3,7 @@ Summary: Перенес старый блог с Jekyll на Pelican и скор
 Date: 2023-07-16 16:00
 Tags: python, pelican, jekyll
 Url: moved-from-jekyll
-Slug: moved-from-jekyll.html
+Slug: moved-from-jekyll
 
 Привет, Мир!
 

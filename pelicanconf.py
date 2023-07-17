@@ -13,7 +13,7 @@ EMAIL = "kurchigin.dmitry@yandex.ru"
 
 
 DEFAULT_PAGINATION = 10
-THEME = "."
+THEME = ""
 
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True
