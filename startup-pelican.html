@@ -45,24 +45,66 @@
 
         <main class="page-content" aria-label="Content">
             <div class="wrapper">
-        <ul class="post-list">
-                <li>
-                    <span class="post-meta">Июль 17, 2023</span>
-                    <h3>
-                        <a class="post-link" href="startup-pelican">
-                            Как я поднял блог с помощью Pelican
-                        </a>
-                    </h3>
-                </li>
-                <li>
-                    <span class="post-meta">Июль 16, 2023</span>
-                    <h3>
-                        <a class="post-link" href="moved-from-jekyll">
-                            Переезд с Jekyll на Pelican
-                        </a>
-                    </h3>
-                </li>
-        </ul>
+  <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+      <header class="post-header">
+          <h1 class="post-title p-name" itemprop="name headline">Как я поднял блог с помощью Pelican</h1>
+          <p class="post-meta">
+              <time class="dt-published" datetime="2023-07-17 16:00:00+03:00" itemprop="datePublished">
+                  Июль 17, 2023
+              </time>
+          </p>
+      </header>
+
+      <div class="post-content e-content" itemprop="articleBody">
+          <h3>Имеем на входе:</h3>
+<ul>
+<li>Старый блог на Jekyll</li>
+<li>Уже готовый дизайн(html+css)</li>
+<li>Знания Python, Jekyll, Django и Jinja</li>
+</ul>
+<h3>Почему я выбрал Pelican:</h3>
+<ul>
+<li>Свежий проект, сообщество активно контрибьютит</li>
+<li>Страницы генерируются на основе markdown, как и Jekyll</li>
+<li>В темплейтах используется Jinja2</li>
+</ul>
+<h1>Мой HowTo:</h1>
+<p>1.) Делаем первый шаг <a href="https://docs.getpelican.com/en/latest/install.html"><strong>отсюда</strong></a>. Устанавливаем Pelican, дополнительные пакеты и выполняем:</p>
+<div class="highlight"><pre><span></span><code>    pelican-quickstart
+</code></pre></div>
+
+<p>2.) После создания минимальной структуры проекта я полез в <em>pelicanconf.py</em>. Помимо основных настроек я прописал свой, к примеру TELEGRAM_USERNAME. Вид моего конфига:</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="n">AUTHOR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;dkurchigin&quot;</span>
+<span class="w">    </span><span class="n">SITENAME</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;Типичный Python разработчик&quot;</span>
+<span class="w">    </span><span class="n">SITESUBTITLE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;О программировании, мелочах жизни и многом другом...&quot;</span>
+<span class="w">    </span><span class="n">SITEURL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;https://dkurchigin.github.io/&quot;</span>
+<span class="w">    </span><span class="k">PATH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;content&quot;</span>
+<span class="w">    </span><span class="n">TIMEZONE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;Europe/Moscow&quot;</span>
+<span class="w">    </span><span class="n">DEFAULT_LANG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;Russian&quot;</span>
+<span class="w">    </span><span class="n">TELEGRAM_USERNAME</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;dirty_rotten_imb&quot;</span>
+<span class="w">    </span><span class="n">GITHUB_USERNAME</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;dkurchigin&quot;</span>
+<span class="w">    </span><span class="n">EMAIL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;kurchigin.dmitry@yandex.ru&quot;</span>
+<span class="w">    </span><span class="n">DEFAULT_PAGINATION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span>
+<span class="w">    </span><span class="n">THEME</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;&quot;</span>
+</code></pre></div>
+
+<p>3.) Для смены стандартной схемы создал <a href="https://docs.getpelican.com/en/latest/themes.html#structure"><strong>следующую структуру</strong></a> в корне проекта</p>
+<p><img alt="pelican_structure" src="https://dkurchigin.github.io/theme/images/pelican_structure.JPG"></p>
+<p>4.) Подсмотреть базовый синтаксис и логику темплейтов можно в <a href="https://github.com/getpelican/pelican/tree/master/pelican/themes"><strong>стандартной теме</strong></a>.</p>
+<p>5.) Для локального дебага делаю <strong>make html</strong>, а затем <strong>make serve</strong>.</p>
+<p>6.) Для публикации на <strong>Github Pages</strong> делаю так:</p>
+<div class="highlight"><pre><span></span><code>    <span class="n">make</span> <span class="n">html</span>
+    <span class="n">ghp</span><span class="o">-</span><span class="kn">import</span> <span class="nn">output</span> <span class="o">-</span><span class="n">b</span> <span class="n">gh</span><span class="o">-</span><span class="n">pages</span>
+    <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">gh</span><span class="o">-</span><span class="n">pages</span>
+</code></pre></div>
+
+<p>7.) В настройках репозитория во вкладке <strong>Pages</strong> указываю, что необходимо забирать контент из ветки <strong>gh-pages</strong>:</p>
+<p><img alt="github_pages_settings" src="https://dkurchigin.github.io/theme/images/github_pages_settings.JPG"></p>
+<p>8.) <strong>ENJOY!</strong></p>
+      </div>
+
+      <a class="u-url" href="startup-pelican" hidden></a>
+  </article>
             </div>
         </main>
 

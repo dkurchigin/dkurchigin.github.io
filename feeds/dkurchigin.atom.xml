@@ -1,5 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Типичный Python разработчик - dkurchigin</title><link href="https://dkurchigin.github.io/" rel="alternate"></link><link href="https://dkurchigin.github.io/feeds/dkurchigin.atom.xml" rel="self"></link><id>https://dkurchigin.github.io/</id><updated>2023-07-16T16:00:00+03:00</updated><subtitle>О программировании, мелочах жизни и многом другом...</subtitle><entry><title>Переезд с Jekyll на Pelican</title><link href="https://dkurchigin.github.io/moved-from-jekyll" rel="alternate"></link><published>2023-07-16T16:00:00+03:00</published><updated>2023-07-16T16:00:00+03:00</updated><author><name>dkurchigin</name></author><id>tag:dkurchigin.github.io,2023-07-16:/moved-from-jekyll</id><summary type="html">&lt;p&gt;Перенес старый блог с Jekyll на Pelican и скорректировал тематику&lt;/p&gt;</summary><content type="html">&lt;p&gt;Привет, Мир!&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Типичный Python разработчик - dkurchigin</title><link href="https://dkurchigin.github.io/" rel="alternate"></link><link href="https://dkurchigin.github.io/feeds/dkurchigin.atom.xml" rel="self"></link><id>https://dkurchigin.github.io/</id><updated>2023-07-17T16:00:00+03:00</updated><subtitle>О программировании, мелочах жизни и многом другом...</subtitle><entry><title>Как я поднял блог с помощью Pelican</title><link href="https://dkurchigin.github.io/startup-pelican" rel="alternate"></link><published>2023-07-17T16:00:00+03:00</published><updated>2023-07-17T16:00:00+03:00</updated><author><name>dkurchigin</name></author><id>tag:dkurchigin.github.io,2023-07-17:/startup-pelican</id><summary type="html">&lt;p&gt;Моё первое впечатление от Pelican&lt;/p&gt;</summary><content type="html">&lt;h3&gt;Имеем на входе:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Старый блог на Jekyll&lt;/li&gt;
+&lt;li&gt;Уже готовый дизайн(html+css)&lt;/li&gt;
+&lt;li&gt;Знания Python, Jekyll, Django и Jinja&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Почему я выбрал Pelican:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Свежий проект, сообщество активно контрибьютит&lt;/li&gt;
+&lt;li&gt;Страницы генерируются на основе markdown, как и Jekyll&lt;/li&gt;
+&lt;li&gt;В темплейтах используется Jinja2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Мой HowTo:&lt;/h1&gt;
+&lt;p&gt;1.) Делаем первый шаг &lt;a href="https://docs.getpelican.com/en/latest/install.html"&gt;&lt;strong&gt;отсюда&lt;/strong&gt;&lt;/a&gt;. Устанавливаем Pelican, дополнительные пакеты и выполняем:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    pelican-quickstart
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;2.) После создания минимальной структуры проекта я полез в &lt;em&gt;pelicanconf.py&lt;/em&gt;. Помимо основных настроек я прописал свой, к примеру TELEGRAM_USERNAME. Вид моего конфига:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;AUTHOR&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;dkurchigin&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;SITENAME&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;Типичный Python разработчик&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;SITESUBTITLE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;О программировании, мелочах жизни и многом другом...&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;SITEURL&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;https://dkurchigin.github.io/&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;PATH&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;content&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;TIMEZONE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;Europe/Moscow&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;DEFAULT_LANG&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;Russian&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;TELEGRAM_USERNAME&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;dirty_rotten_imb&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;GITHUB_USERNAME&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;dkurchigin&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;EMAIL&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;kurchigin.dmitry@yandex.ru&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;DEFAULT_PAGINATION&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;THEME&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;3.) Для смены стандартной схемы создал &lt;a href="https://docs.getpelican.com/en/latest/themes.html#structure"&gt;&lt;strong&gt;следующую структуру&lt;/strong&gt;&lt;/a&gt; в корне проекта&lt;/p&gt;
+&lt;p&gt;&lt;img alt="pelican_structure" src="https://dkurchigin.github.io/theme/images/pelican_structure.JPG"&gt;&lt;/p&gt;
+&lt;p&gt;4.) Подсмотреть базовый синтаксис и логику темплейтов можно в &lt;a href="https://github.com/getpelican/pelican/tree/master/pelican/themes"&gt;&lt;strong&gt;стандартной теме&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;5.) Для локального дебага делаю &lt;strong&gt;make html&lt;/strong&gt;, а затем &lt;strong&gt;make serve&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;6.) Для публикации на &lt;strong&gt;Github Pages&lt;/strong&gt; делаю так:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    &lt;span class="n"&gt;make&lt;/span&gt; &lt;span class="n"&gt;html&lt;/span&gt;
+    &lt;span class="n"&gt;ghp&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;output&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="n"&gt;gh&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pages&lt;/span&gt;
+    &lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;push&lt;/span&gt; &lt;span class="n"&gt;origin&lt;/span&gt; &lt;span class="n"&gt;gh&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pages&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;7.) В настройках репозитория во вкладке &lt;strong&gt;Pages&lt;/strong&gt; указываю, что необходимо забирать контент из ветки &lt;strong&gt;gh-pages&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="github_pages_settings" src="https://dkurchigin.github.io/theme/images/github_pages_settings.JPG"&gt;&lt;/p&gt;
+&lt;p&gt;8.) &lt;strong&gt;ENJOY!&lt;/strong&gt;&lt;/p&gt;</content><category term="python"></category><category term="python"></category><category term="pelican"></category><category term="blog"></category></entry><entry><title>Переезд с Jekyll на Pelican</title><link href="https://dkurchigin.github.io/moved-from-jekyll" rel="alternate"></link><published>2023-07-16T16:00:00+03:00</published><updated>2023-07-16T16:00:00+03:00</updated><author><name>dkurchigin</name></author><id>tag:dkurchigin.github.io,2023-07-16:/moved-from-jekyll</id><summary type="html">&lt;p&gt;Перенес старый блог с Jekyll на Pelican и скорректировал тематику&lt;/p&gt;</summary><content type="html">&lt;p&gt;Привет, Мир!&lt;/p&gt;
 &lt;p&gt;Решил возобновить блогерскую деятельность т.к. возникло куча мыслей и историй, которыми хотелось бы с кем-то поделиться.
 Всему виной моя карьера в IT и небольшое количество людей, которые "в теме".&lt;/p&gt;
 &lt;p&gt;Что с прошлым блогом?
