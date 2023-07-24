@@ -5,13 +5,15 @@
 &lt;li&gt;Уже готовый дизайн(html+css)&lt;/li&gt;
 &lt;li&gt;Знания Python, Jekyll, Django и Jinja&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
 &lt;h3&gt;Почему я выбрал Pelican:&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Свежий проект, сообщество активно контрибьютит&lt;/li&gt;
 &lt;li&gt;Страницы генерируются на основе markdown, как и Jekyll&lt;/li&gt;
 &lt;li&gt;В темплейтах используется Jinja2&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Мой HowTo:&lt;/h1&gt;
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;h3&gt;Мой HowTo:&lt;/h3&gt;
 &lt;p&gt;1.) Делаем первый шаг &lt;a href="https://docs.getpelican.com/en/latest/install.html"&gt;&lt;strong&gt;отсюда&lt;/strong&gt;&lt;/a&gt;. Устанавливаем Pelican, дополнительные пакеты и выполняем:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    pelican-quickstart
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
