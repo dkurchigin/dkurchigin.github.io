@@ -5,5 +5,5 @@ Tags: programming, humor
 Url: buben
 Slug: buben
 
-![Шаманский бубен](/images/tumblr_nvqnvwKJIt1uh3r1eo1_1280.jpg)
+![Шаманский бубен]({static}/theme/images/tumblr_nvqnvwKJIt1uh3r1eo1_1280.jpg)
 На старой работе в свое время дарили бубен… Как главному шаману…
