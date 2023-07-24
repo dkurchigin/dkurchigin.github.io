@@ -15,7 +15,7 @@
                     </div>
                     <div class="col text-end">
                         {% for tag in article.tags %}
-                            <span>{{ tag }}</span>
+                            <span class="{{ TAGS_COLORS.get(tag, 'badge bg-dark') }}">{{ tag }}</span>
                         {% endfor %}
                     </div>
                 </div>
