@@ -41,10 +41,30 @@
                 <div class="row">
                     <div class="col"></div>
                     <ul class="post-list col-8">
-    <h1>Authors on Типичный Python разработчик</h1>
-    <ul>
-        <li><a href="https://dkurchigin.github.io/author/dkurchigin.html">dkurchigin</a> (9)</li>
-    </ul>
+  <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+      <header class="post-header">
+          <h1 class="post-title p-name" itemprop="name headline">IP-сканер на Perl</h1>
+          <p class="post-meta small">
+              <time class="dt-published" datetime="2016-06-02 16:00:00+03:00" itemprop="datePublished">
+                  Июнь 02, 2016
+              </time>
+          </p>
+      </header>
+
+      <div class="post-content e-content" itemprop="articleBody">
+          <p>Привет!</p>
+<p>Написал простенькую пинговалку на <strong>PERL</strong> для <strong>Windows</strong> и <strong>Linux</strong>. Сканер можно скачать <a href="https://github.com/dkurchigin/perl/tree/master/ip-scanner"><strong>здесь</strong></a>.</p>
+<p>Сканер позволяет автоматически пинговать адреса из файла <strong><em>"ip_list"</em></strong> и выводить их состояние на экран.</p>
+<p><strong>Внимание:</strong> Последняя версия сканера реализована с помощью модуля <a href="http://search.cpan.org/dist/perl-5.8.0/lib/Net/Ping.pm"><strong>Net::Ping</strong></a>, что обеспечивает кроссплатформенность. Для определения статуса ip-адреса используется протокол icmp, поэтому скрипт требует запуска с правами администратора.</p>
+<p><em>Программа поддерживает параметры:</em> </p>
+<p>-v - Настройка вывода результатов работы. Возможные значения: <strong><em>only_up</em></strong> и <strong><em>only_down</em></strong> - показывать только активные и не активные адреса соответственно. По умолчанию отображаются все адреса. </p>
+<p>-c - Путь до файла с адресами. По умолчанию программа берет данные из файла <strong><em>"ip_list"</em></strong>, значения пути до файла можно задавать как относительным, так и абсолютным. Запуск с параметрами возможен как из консоли, так и по ярлыку. </p>
+<p>-t - время таймаута, задается в секундах, по умолчанию <strong><em>3с</em></strong>.</p>
+<p><strong>Пример:</strong> <em>perl scanner.pl -v=only_up -c=D:\somefile -t=5</em></p>
+      </div>
+
+      <a class="u-url" href="perl-ping" hidden></a>
+  </article>
                         </ul>
                     <div class="col"></div>
                 </div>
