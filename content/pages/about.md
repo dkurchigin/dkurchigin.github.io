@@ -10,4 +10,4 @@ Title: /about/
 
 
 Меня можно найти: 
-* [GitHub](https://github.com/dkurchigin)
+[GitHub](https://github.com/dkurchigin)

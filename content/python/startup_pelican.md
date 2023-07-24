@@ -10,12 +10,16 @@ Slug: startup-pelican
 - Уже готовый дизайн(html+css)
 - Знания Python, Jekyll, Django и Jinja
 
+<br/>
+
 ###Почему я выбрал Pelican:
 - Свежий проект, сообщество активно контрибьютит
 - Страницы генерируются на основе markdown, как и Jekyll
 - В темплейтах используется Jinja2
 
-#Мой HowTo:
+<br/>
+
+###Мой HowTo:
 1.) Делаем первый шаг [**отсюда**](https://docs.getpelican.com/en/latest/install.html). Устанавливаем Pelican, дополнительные пакеты и выполняем:
 
 ```
