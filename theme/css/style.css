@@ -114,7 +114,18 @@ a:hover {
     color: #111;
     text-decoration: underline;
 }
-
+.white-link {
+    color: white;
+    text-decoration: none;
+}
+.white-link:hover {
+    color: white;
+    text-decoration: none;
+}
+.white-link:visited {
+    color: white;
+    text-decoration: none;
+}
 /**
  * Site header
  */
