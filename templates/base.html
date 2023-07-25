@@ -24,13 +24,8 @@
                         <a class="site-title" href="{{ SITEURL }}/">{{ SITENAME }}</a>
                         <div class="d-flex justify-content-between">
                             <p class="site-description text-body-tertiary small">{{ SITESUBTITLE }}</p>
-                            <nav class="site-nav">
-                                <div class="trigger">
-                                    {% for pg in pages %}
-                                        <a class="page-link" href="{{ SITEURL }}/{{ pg.url }}"><h4>{{ pg.title }}</h4></a>
-                                    {% endfor %}
-                                </div>
-                            </nav>
+                            <a class="" href="{{ SITEURL }}/tags"><h4>/tags/</h4></a>
+                            <a class="" href="{{ SITEURL }}/pages/about"><h4>/about/</h4></a>
                         </div>
                     </div>
                     <div class="col"></div>

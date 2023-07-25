@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class="text-center">Доступные тэги:</h1>
+    <div class="container text-center">
+        <div class="row row-cols-3">
+            {% for tag, articles in tags|sort %}
+                <div class="col"><a class="white-link {{ TAGS_COLORS.get(tag, 'badge bg-dark') }}" href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a> ({{ articles|count }})</div>
+            {% endfor %}
+        </div>
+    </div>
+    <ul>
+
+    </ul>
+{% endblock %}
