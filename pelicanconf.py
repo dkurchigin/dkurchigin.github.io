@@ -22,6 +22,7 @@ TAGS_COLORS = {
     "perl": "badge blue-100",
     "arduino": "badge blue-200",
     "diy": "badge blue-600",
+    "pcep": "badge blue-700",
 }
 
 # Uncomment following line if you want document-relative URLs when developing
