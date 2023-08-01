@@ -5,15 +5,15 @@
         {% for article in articles_page.object_list %}
             <div class="mb-4">
                 <span class="post-meta small">{{ article.date.strftime('%B %d, %Y') }}</span>
-                <div class="row">
-                    <div class="col-9">
+                <div class="d-flex justify-content-between">
+                    <div class="">
                         <h4>
                             <a class="post-link" href="{{ article.url }}">
                                 {{ article.title }}
                             </a>
                         </h4>
                     </div>
-                    <div class="col text-end">
+                    <div class="tags text-end">
                         {% for tag in article.tags %}
                             <span class="{{ TAGS_COLORS.get(tag, 'badge bg-dark') }}"><a class="white-link" href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a></span>
                         {% endfor %}

@@ -17,12 +17,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col"></div>
-                    <div class="col-8">
+                    <div class="col-12 col-md-8">
                         <a class="blog_avatar p-3" href="{{ SITEURL }}/">
                             <img class="logo" src="{{ SITEURL }}/theme/images/logo.png" />
                         </a>
                         <a class="site-title" href="{{ SITEURL }}/">{{ SITENAME }}</a>
-                        <div class="d-flex justify-content-between">
+                        <div class="d-block d-md-flex justify-content-between">
                             <p class="site-description text-body-tertiary small">{{ SITESUBTITLE }}</p>
                             <a class="" href="{{ SITEURL }}/tags"><h4>/tags/</h4></a>
                             <a class="" href="{{ SITEURL }}/pages/about"><h4>/about/</h4></a>
@@ -37,7 +37,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col"></div>
-                    <ul class="post-list col-8">
+                    <ul class="post-list col-12 col-md-8">
                         {% block content %}
                         {% endblock %}
                         </ul>
@@ -50,9 +50,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col"></div>
-                    <div class="col-8">
+                    <div class="col-12 col-md-8">
                         <h5 class="footer-heading">Типичный Python разработчик</h5>
-                        <div class="d-flex justify-content-between">
+                        <div class="d-block d-md-flex justify-content-between">
                             <div>
                                 <p class="text-body-tertiary small">{{ SITENAME }} <br>  <a href="mailto:{{ EMAIL }}">{{ EMAIL }}</a></p>
                             </div>
@@ -83,7 +83,7 @@
                                     </a>
                                 {% endif %}
                             </div>
-                            <div><p class="text-end text-body-tertiary small">Блог создан с помощью Pelican <br> и GitHub Pages</p></div>
+                            <div><p class="text-start text-md-end text-body-tertiary small">Блог создан с помощью Pelican <br> и GitHub Pages</p></div>
                         </div>
                     </div>
                     <div class="col"></div>

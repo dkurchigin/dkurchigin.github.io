@@ -149,7 +149,6 @@ a:hover {
 }
 .site-description {
     float: left;
-    width: 550px;
     font-size: 15px;
     color: #828282;
 }
@@ -159,6 +158,7 @@ a:hover {
 }
 
 .logo {
+    min-width: 250px;
     width: 30%;
     border-radius: 5px;
     box-shadow: 0 0 7px #666;
@@ -171,7 +171,12 @@ a:hover {
 .post-meta {
     color: #828282;
 }
-
+.post-list {
+    margin: 0px 0px auto;
+}
+.tags {
+    width: 40%;
+}
 .site-footer {
     border-top: 1px solid #e8e8e8;
     padding: 60px 0;
