@@ -1,5 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Типичный Python разработчик</title><link href="https://dkurchigin.github.io/" rel="alternate"></link><link href="https://dkurchigin.github.io/feeds/all.atom.xml" rel="self"></link><id>https://dkurchigin.github.io/</id><updated>2023-09-10T16:00:00+03:00</updated><subtitle>О программировании, мелочах жизни и многом другом...</subtitle><entry><title>Вопросы на собеседованиях Middle Python 2023</title><link href="https://dkurchigin.github.io/qa-middle-2023" rel="alternate"></link><published>2023-09-10T16:00:00+03:00</published><updated>2023-09-10T16:00:00+03:00</updated><author><name>dkurchigin</name></author><id>tag:dkurchigin.github.io,2023-09-10:/qa-middle-2023</id><summary type="html">&lt;p&gt;Что часто у меня спрашивали на собесах&lt;/p&gt;</summary><content type="html">&lt;p&gt;Привет, мир!&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Типичный Python разработчик</title><link href="https://dkurchigin.github.io/" rel="alternate"></link><link href="https://dkurchigin.github.io/feeds/all.atom.xml" rel="self"></link><id>https://dkurchigin.github.io/</id><updated>2023-09-17T16:00:00+03:00</updated><subtitle>О программировании, мелочах жизни и многом другом...</subtitle><entry><title>Как я менял прошивку на смартфоне Redmi 9A</title><link href="https://dkurchigin.github.io/about-os-in-smartphone" rel="alternate"></link><published>2023-09-17T16:00:00+03:00</published><updated>2023-09-17T16:00:00+03:00</updated><author><name>dkurchigin</name></author><id>tag:dkurchigin.github.io,2023-09-17:/about-os-in-smartphone</id><summary type="html">&lt;p&gt;Философские размышления о рептилоидах и дерьмовом качестве ПО&lt;/p&gt;</summary><content type="html">&lt;p&gt;Привет!&lt;/p&gt;
+&lt;p&gt;Меня всегда смущали смартфоны с их закрытым ПО и навязыванием технологий/подходов во время их работы. Несколько дней назад у меня дошли руки попробовать сменить операционку на смартфоне, т.к. количество негатива стало зашкаливать.&lt;/p&gt;
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;h3&gt;Собственно, негатив:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;смартфон постоянно что-то откуда-то качает либо что-то куда-то передаёт&lt;/li&gt;
+&lt;li&gt;постоянные зависания и странное поведение&lt;/li&gt;
+&lt;li&gt;навязывание приложений/новостей&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;h3&gt;С какими проблемами я столкнулся при перепрошивке:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;очень малое количество устройств&lt;/li&gt;
+&lt;li&gt;у кучи проектов нет адекватных TODO, утилит для установки. Сложно разобраться как и что обновлять&lt;/li&gt;
+&lt;li&gt;часть сайтов с ошибками, к примеру, не грузит список устройств из базы, а в консоле браузера ошибки в &lt;strong&gt;JS&lt;/strong&gt;, лол&lt;/li&gt;
+&lt;li&gt;одна из прошивок окирпичила мой смартфон&lt;/li&gt;
+&lt;li&gt;официальные прошивки ставятся за 2-3 клика, неофициальные ставятся только с шаманскими бубнами&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;h3&gt;Чем всё кончилось:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;я успешно окирпичил телефон&lt;/li&gt;
+&lt;li&gt;плюнул и поставил чистую &lt;strong&gt;MIUI 12&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;максимально всё отключил(улучшалки, анимации, сбор и отправки данных)&lt;/li&gt;
+&lt;li&gt;удалил ненужные приложения&lt;/li&gt;
+&lt;li&gt;одел шапочку из фольги&lt;/li&gt;
+&lt;li&gt;подумал о том, что возможно у &lt;strong&gt;Ubuntu Touch&lt;/strong&gt; есть будущее, т.к. это единственное, что выглядит максимально структурированно и приятно, но устройств мало&lt;/li&gt;
+&lt;/ul&gt;</content><category term="diy"></category><category term="smartphone"></category><category term="open source"></category></entry><entry><title>Вопросы на собеседованиях Middle Python 2023</title><link href="https://dkurchigin.github.io/qa-middle-2023" rel="alternate"></link><published>2023-09-10T16:00:00+03:00</published><updated>2023-09-10T16:00:00+03:00</updated><author><name>dkurchigin</name></author><id>tag:dkurchigin.github.io,2023-09-10:/qa-middle-2023</id><summary type="html">&lt;p&gt;Что часто у меня спрашивали на собесах&lt;/p&gt;</summary><content type="html">&lt;p&gt;Привет, мир!&lt;/p&gt;
 &lt;p&gt;Решил записать основные вопросы, которые у меня спрашивали на собесах для &lt;strong&gt;мидла&lt;/strong&gt; на &lt;strong&gt;Python&lt;/strong&gt;. 
 Здесь будут только вопросы, без ответов. &lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Почему?&lt;/strong&gt; Потому что вы сами сможите погуглить в различных источниках, разобраться как в глубь, так и в ширь.&lt;/p&gt;
