@@ -16,13 +16,14 @@ DEFAULT_PAGINATION = 10
 THEME = ""
 
 TAGS_COLORS = {
-    "python": "badge blue-500",
-    "pelican": "badge blue-300",
-    "programming": "badge blue-400",
-    "perl": "badge blue-100",
     "arduino": "badge blue-200",
     "diy": "badge blue-600",
+    "job": "badge blue-200",
     "pcep": "badge blue-700",
+    "pelican": "badge blue-300",
+    "perl": "badge blue-100",
+    "programming": "badge blue-400",
+    "python": "badge blue-500",
 }
 
 # Uncomment following line if you want document-relative URLs when developing
