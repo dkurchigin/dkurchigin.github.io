@@ -1,5 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Типичный Python разработчик - dkurchigin</title><link href="https://dkurchigin.github.io/" rel="alternate"></link><link href="https://dkurchigin.github.io/feeds/dkurchigin.atom.xml" rel="self"></link><id>https://dkurchigin.github.io/</id><updated>2023-09-19T16:00:00+03:00</updated><subtitle>О программировании, мелочах жизни и многом другом...</subtitle><entry><title>Как я искал работу на уровень Middle Python</title><link href="https://dkurchigin.github.io/job-search-2023" rel="alternate"></link><published>2023-09-19T16:00:00+03:00</published><updated>2023-09-19T16:00:00+03:00</updated><author><name>dkurchigin</name></author><id>tag:dkurchigin.github.io,2023-09-19:/job-search-2023</id><summary type="html">&lt;p&gt;Статья актуальна для 2023 года&lt;/p&gt;</summary><content type="html">&lt;p&gt;Привет!&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Типичный Python разработчик - dkurchigin</title><link href="https://dkurchigin.github.io/" rel="alternate"></link><link href="https://dkurchigin.github.io/feeds/dkurchigin.atom.xml" rel="self"></link><id>https://dkurchigin.github.io/</id><updated>2023-10-15T16:00:00+03:00</updated><subtitle>О программировании, мелочах жизни и многом другом...</subtitle><entry><title>Программирование Arduino с помощью Rust</title><link href="https://dkurchigin.github.io/arduino-with-rust" rel="alternate"></link><published>2023-10-15T16:00:00+03:00</published><updated>2023-10-15T16:00:00+03:00</updated><author><name>dkurchigin</name></author><id>tag:dkurchigin.github.io,2023-10-15:/arduino-with-rust</id><summary type="html">&lt;p&gt;Шьём Arduino через Rust&lt;/p&gt;</summary><content type="html">&lt;p&gt;Привет!&lt;/p&gt;
+&lt;p&gt;Дошли руки и появилось настроение написать статью как я стал прошивать &lt;strong&gt;Arduino Nano&lt;/strong&gt; через &lt;strong&gt;Rust&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3&gt;Как всё это выглядит&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;прошиваю через &lt;strong&gt;USB&lt;/strong&gt;, запоминаю название этого &lt;strong&gt;COM&lt;/strong&gt;-порта&lt;/li&gt;
+&lt;li&gt;для прошивки использую &lt;a href="https://github.com/Rahix/avr-hal/tree/main"&gt;&lt;strong&gt;этот пакет&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;PROFIT!&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;h3&gt;А теперь по порядку&lt;/h3&gt;
+&lt;p&gt;Подключаю плату к компьютеру, затем надо установить все необходимые зависимости для &lt;a href="https://github.com/Rahix/avr-hal/tree/main#quickstart"&gt;&lt;strong&gt;avr-hal&lt;/strong&gt;&lt;/a&gt;, ну и сам &lt;strong&gt;Rust&lt;/strong&gt;, разумеется.
+Следуя инструкции к пакету выполняю все шаги и делаю:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    cargo build
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Если не установлена нужная настройка фичи (&lt;strong&gt;&lt;em&gt;в виде  вашей платы&lt;/em&gt;&lt;/strong&gt;), то пакет это сообщит и спросит наш выбор. 
+У меня настройка выглядит так: &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    features = [&amp;quot;arduino-nano&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;После написания программы необходимо ее залить с помощью команды:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    cargo run
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Настройки прошивалки можно посмотреть в файле &lt;strong&gt;&lt;em&gt;.cargo/config.toml&lt;/em&gt;&lt;/strong&gt; У меня он выглядит так:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;build&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;target&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;avr-specs/avr-atmega328p.json&amp;quot;&lt;/span&gt;
+
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;target.&amp;#39;cfg(target_arch = &amp;quot;avr&amp;quot;)&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;runner&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;ravedude nano -cb 57600 -P COM5&amp;quot;&lt;/span&gt;
+
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;unstable&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;build&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;&amp;quot;core&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Дополнительные настройки платы формируются пакетом автоматически. Посмотреть можно по этому пути &lt;strong&gt;&lt;em&gt;avr-specs/avr-atmega328p.json&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    {
+      &amp;quot;arch&amp;quot;: &amp;quot;avr&amp;quot;,
+      &amp;quot;atomic-cas&amp;quot;: false,
+      &amp;quot;cpu&amp;quot;: &amp;quot;atmega328p&amp;quot;,
+      &amp;quot;data-layout&amp;quot;: &amp;quot;e-P1-p:16:8-i8:8-i16:8-i32:8-i64:8-f32:8-f64:8-n8-a:8&amp;quot;,
+      &amp;quot;eh-frame-header&amp;quot;: false,
+      &amp;quot;exe-suffix&amp;quot;: &amp;quot;.elf&amp;quot;,
+      &amp;quot;executables&amp;quot;: true,
+      &amp;quot;late-link-args&amp;quot;: {
+        &amp;quot;gcc&amp;quot;: [
+          &amp;quot;-lgcc&amp;quot;
+        ]
+      },
+      &amp;quot;linker&amp;quot;: &amp;quot;avr-gcc&amp;quot;,
+      &amp;quot;llvm-target&amp;quot;: &amp;quot;avr-unknown-unknown&amp;quot;,
+      &amp;quot;max-atomic-width&amp;quot;: 8,
+      &amp;quot;no-default-libraries&amp;quot;: false,
+      &amp;quot;pre-link-args&amp;quot;: {
+        &amp;quot;gcc&amp;quot;: [
+          &amp;quot;-mmcu=atmega328p&amp;quot;
+        ]
+      },
+      &amp;quot;target-c-int-width&amp;quot;: &amp;quot;16&amp;quot;,
+      &amp;quot;target-pointer-width&amp;quot;: &amp;quot;16&amp;quot;
+    }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="diy"></category><category term="programming"></category><category term="robot"></category><category term="rust"></category><category term="arduino"></category></entry><entry><title>Как я искал работу на уровень Middle Python</title><link href="https://dkurchigin.github.io/job-search-2023" rel="alternate"></link><published>2023-09-19T16:00:00+03:00</published><updated>2023-09-19T16:00:00+03:00</updated><author><name>dkurchigin</name></author><id>tag:dkurchigin.github.io,2023-09-19:/job-search-2023</id><summary type="html">&lt;p&gt;Статья актуальна для 2023 года&lt;/p&gt;</summary><content type="html">&lt;p&gt;Привет!&lt;/p&gt;
 &lt;p&gt;Хочу поделиться опытом как я менял работу осенью 2023 года, выразить своё мнение и развеить парочку мифов. 
 Забегая вперед скажу, что поиск на &lt;strong&gt;HH&lt;/strong&gt; произошел практически в холостую, все в молоко, никакого мэтча. При этом очень много хороших вариантов было получено через LinkedIn.&lt;/p&gt;
 &lt;p&gt;Хочу поблагодарить &lt;a href="https://www.linkedin.com/in/varvara-mishina-0556a0167/"&gt;&lt;strong&gt;Варвару Мишину&lt;/strong&gt;&lt;/a&gt; из компании &lt;a href="https://cerebro.team/"&gt;&lt;strong&gt;CEREBRO&lt;/strong&gt;&lt;/a&gt;. 

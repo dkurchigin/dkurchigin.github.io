@@ -38,42 +38,83 @@
                 <div class="row">
                     <div class="col"></div>
                     <ul class="post-list col-12 col-md-8">
-            <div class="mb-4">
-                <span class="post-meta small">Октябрь 15, 2023</span>
-                <div class="d-flex justify-content-between">
-                    <div class="">
-                        <h4>
-                            <a class="post-link" href="arduino-with-rust">
-                                Программирование Arduino с помощью Rust
-                            </a>
-                        </h4>
-                    </div>
-                    <div class="tags text-end">
-                            <span class="badge blue-400"><a class="white-link" href="https://dkurchigin.github.io/tag/programming.html">programming</a></span>
-                            <span class="badge bg-dark"><a class="white-link" href="https://dkurchigin.github.io/tag/robot.html">robot</a></span>
-                            <span class="badge blue-600"><a class="white-link" href="https://dkurchigin.github.io/tag/rust.html">rust</a></span>
-                            <span class="badge blue-200"><a class="white-link" href="https://dkurchigin.github.io/tag/arduino.html">arduino</a></span>
-                    </div>
-                </div>
-            </div>
-            <div class="mb-4">
-                <span class="post-meta small">Сентябрь 25, 2016</span>
-                <div class="d-flex justify-content-between">
-                    <div class="">
-                        <h4>
-                            <a class="post-link" href="robotmk1-review">
-                                Robot MK1
-                            </a>
-                        </h4>
-                    </div>
-                    <div class="tags text-end">
-                            <span class="badge blue-400"><a class="white-link" href="https://dkurchigin.github.io/tag/programming.html">programming</a></span>
-                            <span class="badge bg-dark"><a class="white-link" href="https://dkurchigin.github.io/tag/robot.html">robot</a></span>
-                            <span class="badge blue-200"><a class="white-link" href="https://dkurchigin.github.io/tag/arduino.html">arduino</a></span>
-                            <span class="badge blue-600"><a class="white-link" href="https://dkurchigin.github.io/tag/diy.html">diy</a></span>
-                    </div>
-                </div>
-            </div>
+  <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+      <header class="post-header">
+          <h1 class="post-title p-name" itemprop="name headline">Программирование Arduino с помощью Rust</h1>
+          <p class="post-meta small">
+              <time class="dt-published" datetime="2023-10-15 16:00:00+03:00" itemprop="datePublished">
+                  Октябрь 15, 2023
+              </time>
+          </p>
+      </header>
+
+      <div class="post-content e-content" itemprop="articleBody">
+          <p>Привет!</p>
+<p>Дошли руки и появилось настроение написать статью как я стал прошивать <strong>Arduino Nano</strong> через <strong>Rust</strong>.</p>
+<h3>Как всё это выглядит</h3>
+<ul>
+<li>прошиваю через <strong>USB</strong>, запоминаю название этого <strong>COM</strong>-порта</li>
+<li>для прошивки использую <a href="https://github.com/Rahix/avr-hal/tree/main"><strong>этот пакет</strong></a></li>
+<li><strong>PROFIT!</strong></li>
+</ul>
+<p><br/></p>
+<h3>А теперь по порядку</h3>
+<p>Подключаю плату к компьютеру, затем надо установить все необходимые зависимости для <a href="https://github.com/Rahix/avr-hal/tree/main#quickstart"><strong>avr-hal</strong></a>, ну и сам <strong>Rust</strong>, разумеется.
+Следуя инструкции к пакету выполняю все шаги и делаю:</p>
+<div class="highlight"><pre><span></span><code>    cargo build
+</code></pre></div>
+
+<p>Если не установлена нужная настройка фичи (<strong><em>в виде  вашей платы</em></strong>), то пакет это сообщит и спросит наш выбор. 
+У меня настройка выглядит так: </p>
+<div class="highlight"><pre><span></span><code>    features = [&quot;arduino-nano&quot;]
+</code></pre></div>
+
+<p>После написания программы необходимо ее залить с помощью команды:</p>
+<div class="highlight"><pre><span></span><code>    cargo run
+</code></pre></div>
+
+<p>Настройки прошивалки можно посмотреть в файле <strong><em>.cargo/config.toml</em></strong> У меня он выглядит так:</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="o">[</span><span class="n">build</span><span class="o">]</span>
+<span class="w">    </span><span class="n">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;avr-specs/avr-atmega328p.json&quot;</span>
+
+<span class="w">    </span><span class="o">[</span><span class="n">target.&#39;cfg(target_arch = &quot;avr&quot;)&#39;</span><span class="o">]</span>
+<span class="w">    </span><span class="n">runner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;ravedude nano -cb 57600 -P COM5&quot;</span>
+
+<span class="w">    </span><span class="o">[</span><span class="n">unstable</span><span class="o">]</span>
+<span class="w">    </span><span class="n">build</span><span class="o">-</span><span class="n">std</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;core&quot;</span><span class="o">]</span>
+</code></pre></div>
+
+<p>Дополнительные настройки платы формируются пакетом автоматически. Посмотреть можно по этому пути <strong><em>avr-specs/avr-atmega328p.json</em></strong></p>
+<div class="highlight"><pre><span></span><code>    {
+      &quot;arch&quot;: &quot;avr&quot;,
+      &quot;atomic-cas&quot;: false,
+      &quot;cpu&quot;: &quot;atmega328p&quot;,
+      &quot;data-layout&quot;: &quot;e-P1-p:16:8-i8:8-i16:8-i32:8-i64:8-f32:8-f64:8-n8-a:8&quot;,
+      &quot;eh-frame-header&quot;: false,
+      &quot;exe-suffix&quot;: &quot;.elf&quot;,
+      &quot;executables&quot;: true,
+      &quot;late-link-args&quot;: {
+        &quot;gcc&quot;: [
+          &quot;-lgcc&quot;
+        ]
+      },
+      &quot;linker&quot;: &quot;avr-gcc&quot;,
+      &quot;llvm-target&quot;: &quot;avr-unknown-unknown&quot;,
+      &quot;max-atomic-width&quot;: 8,
+      &quot;no-default-libraries&quot;: false,
+      &quot;pre-link-args&quot;: {
+        &quot;gcc&quot;: [
+          &quot;-mmcu=atmega328p&quot;
+        ]
+      },
+      &quot;target-c-int-width&quot;: &quot;16&quot;,
+      &quot;target-pointer-width&quot;: &quot;16&quot;
+    }
+</code></pre></div>
+      </div>
+
+      <a class="u-url" href="arduino-with-rust" hidden></a>
+  </article>
                         </ul>
                     <div class="col"></div>
                 </div>
