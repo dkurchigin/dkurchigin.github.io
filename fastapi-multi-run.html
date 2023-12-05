@@ -38,83 +38,54 @@
                 <div class="row">
                     <div class="col"></div>
                     <ul class="post-list col-12 col-md-8">
-            <div class="mb-4">
-                <span class="post-meta small">Ноябрь 25, 2023</span>
-                <div class="d-flex justify-content-between">
-                    <div class="">
-                        <h4>
-                            <a class="post-link" href="robotmk2-review">
-                                Robot MK2
-                            </a>
-                        </h4>
-                        <span class="post-meta small"><p>Реинкарнация роботизированной платформы</p></span>
-                    </div>
-                    <div class="tags text-end">
-                            <span class="badge blue-400"><a class="white-link" href="https://dkurchigin.github.io/tag/programming.html">programming</a></span>
-                            <span class="badge bg-dark"><a class="white-link" href="https://dkurchigin.github.io/tag/robot.html">robot</a></span>
-                            <span class="badge blue-200"><a class="white-link" href="https://dkurchigin.github.io/tag/arduino.html">arduino</a></span>
-                            <span class="badge blue-600"><a class="white-link" href="https://dkurchigin.github.io/tag/diy.html">diy</a></span>
-                            <span class="badge blue-600"><a class="white-link" href="https://dkurchigin.github.io/tag/rust.html">rust</a></span>
-                    </div>
-                </div>
-            </div>
-            <div class="mb-4">
-                <span class="post-meta small">Октябрь 21, 2023</span>
-                <div class="d-flex justify-content-between">
-                    <div class="">
-                        <h4>
-                            <a class="post-link" href="arduino-with-rust-mg995">
-                                Управление Arduino и MG995 с помощью Rust
-                            </a>
-                        </h4>
-                        <span class="post-meta small"><p>MG995 - 360градусный сервопривод</p></span>
-                    </div>
-                    <div class="tags text-end">
-                            <span class="badge blue-400"><a class="white-link" href="https://dkurchigin.github.io/tag/programming.html">programming</a></span>
-                            <span class="badge bg-dark"><a class="white-link" href="https://dkurchigin.github.io/tag/robot.html">robot</a></span>
-                            <span class="badge blue-600"><a class="white-link" href="https://dkurchigin.github.io/tag/rust.html">rust</a></span>
-                            <span class="badge blue-200"><a class="white-link" href="https://dkurchigin.github.io/tag/arduino.html">arduino</a></span>
-                    </div>
-                </div>
-            </div>
-            <div class="mb-4">
-                <span class="post-meta small">Октябрь 15, 2023</span>
-                <div class="d-flex justify-content-between">
-                    <div class="">
-                        <h4>
-                            <a class="post-link" href="arduino-with-rust">
-                                Программирование Arduino с помощью Rust
-                            </a>
-                        </h4>
-                        <span class="post-meta small"><p>Шьём Arduino через Rust</p></span>
-                    </div>
-                    <div class="tags text-end">
-                            <span class="badge blue-400"><a class="white-link" href="https://dkurchigin.github.io/tag/programming.html">programming</a></span>
-                            <span class="badge bg-dark"><a class="white-link" href="https://dkurchigin.github.io/tag/robot.html">robot</a></span>
-                            <span class="badge blue-600"><a class="white-link" href="https://dkurchigin.github.io/tag/rust.html">rust</a></span>
-                            <span class="badge blue-200"><a class="white-link" href="https://dkurchigin.github.io/tag/arduino.html">arduino</a></span>
-                    </div>
-                </div>
-            </div>
-            <div class="mb-4">
-                <span class="post-meta small">Сентябрь 25, 2016</span>
-                <div class="d-flex justify-content-between">
-                    <div class="">
-                        <h4>
-                            <a class="post-link" href="robotmk1-review">
-                                Robot MK1
-                            </a>
-                        </h4>
-                        <span class="post-meta small"><p>Наконец-то сделал первый прототип роботизированной платформы</p></span>
-                    </div>
-                    <div class="tags text-end">
-                            <span class="badge blue-400"><a class="white-link" href="https://dkurchigin.github.io/tag/programming.html">programming</a></span>
-                            <span class="badge bg-dark"><a class="white-link" href="https://dkurchigin.github.io/tag/robot.html">robot</a></span>
-                            <span class="badge blue-200"><a class="white-link" href="https://dkurchigin.github.io/tag/arduino.html">arduino</a></span>
-                            <span class="badge blue-600"><a class="white-link" href="https://dkurchigin.github.io/tag/diy.html">diy</a></span>
-                    </div>
-                </div>
-            </div>
+  <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+      <header class="post-header">
+          <h1 class="post-title p-name" itemprop="name headline">FastAPI - одна кодовая база, но разные приложения</h1>
+          <p class="post-meta small">
+              <time class="dt-published" datetime="2023-12-09 16:00:00+03:00" itemprop="datePublished">
+                  Декабрь 09, 2023
+              </time>
+          </p>
+      </header>
+
+      <div class="post-content e-content" itemprop="articleBody">
+          <p>Привет!</p>
+<p>Не первый раз на работе возникает необходимость реализовать отдельные сервисы в <strong>FastAPI</strong>(при этом связанные одними сервисами/моделями) и при этом исключить дублирование кода.</p>
+<p><a href="https://stackoverflow.com/"><strong>Stackoverflow</strong></a> и прочие сервисы не дают решения данного вопроса и не первый раз реализовываю вот такую структуру приложения:</p>
+<div class="highlight"><pre><span></span><code>├───application
+│   ├───api
+│   ├───core
+│   ├───documentations
+│   ├───second_app
+│   │   └───api
+│   │   └───main.py
+│   ├───third_app
+│   │   └───api
+│   │   └───main.py
+│   ├───exceptions
+│   ├───models
+│   ├───orm
+│   ├───repositories
+│   ├───schemas
+│   ├───services
+│   ├───settings
+│   ├───tests
+│   ├───utils
+│   └───main.py
+</code></pre></div>
+
+<h3>При этом получаем:</h3>
+<ul>
+<li>основное приложение, которое запускается, к примеру, вот так <strong><em>uvicorn application.main:app --host 0.0.0.0 --port 8000</em></strong></li>
+<li>второе приложение использует общие модели/сервисы/зависимости, но имеет отдельные эндпоинты/лайфспан и запускается <strong><em>uvicorn application.second_app.main:app --host 0.0.0.0 --port 8001</em></strong></li>
+<li>третье запускается аналогично: <strong><em>uvicorn application.third_app.main:app --host 0.0.0.0 --port 8002</em></strong></li>
+</ul>
+<p><br>
+Теперь можно разнести их либо на одной машине на разных портах, либо на разных, либо в разных контейнерах и тд..</p>
+      </div>
+
+      <a class="u-url" href="fastapi-multi-run" hidden></a>
+  </article>
                         </ul>
                     <div class="col"></div>
                 </div>

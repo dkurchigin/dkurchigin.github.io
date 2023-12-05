@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Типичный Python разработчик</title><link href="https://dkurchigin.github.io/" rel="alternate"></link><link href="https://dkurchigin.github.io/feeds/all.atom.xml" rel="self"></link><id>https://dkurchigin.github.io/</id><updated>2023-11-25T16:00:00+03:00</updated><subtitle>О программировании, мелочах жизни и многом другом...</subtitle><entry><title>Robot MK2</title><link href="https://dkurchigin.github.io/robotmk2-review" rel="alternate"></link><published>2023-11-25T16:00:00+03:00</published><updated>2023-11-25T16:00:00+03:00</updated><author><name>dkurchigin</name></author><id>tag:dkurchigin.github.io,2023-11-25:/robotmk2-review</id><summary type="html">&lt;p&gt;Реинкарнация роботизированной платформы&lt;/p&gt;</summary><content type="html">&lt;p&gt;Привет!&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Типичный Python разработчик</title><link href="https://dkurchigin.github.io/" rel="alternate"></link><link href="https://dkurchigin.github.io/feeds/all.atom.xml" rel="self"></link><id>https://dkurchigin.github.io/</id><updated>2023-12-09T16:00:00+03:00</updated><subtitle>О программировании, мелочах жизни и многом другом...</subtitle><entry><title>FastAPI - одна кодовая база, но разные приложения</title><link href="https://dkurchigin.github.io/fastapi-multi-run" rel="alternate"></link><published>2023-12-09T16:00:00+03:00</published><updated>2023-12-09T16:00:00+03:00</updated><author><name>dkurchigin</name></author><id>tag:dkurchigin.github.io,2023-12-09:/fastapi-multi-run</id><summary type="html">&lt;p&gt;Как переиспользовать код, но при этом реализовать несколько независимых приложений&lt;/p&gt;</summary><content type="html">&lt;p&gt;Привет!&lt;/p&gt;
+&lt;p&gt;Не первый раз на работе возникает необходимость реализовать отдельные сервисы в &lt;strong&gt;FastAPI&lt;/strong&gt;(при этом связанные одними сервисами/моделями) и при этом исключить дублирование кода.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://stackoverflow.com/"&gt;&lt;strong&gt;Stackoverflow&lt;/strong&gt;&lt;/a&gt; и прочие сервисы не дают решения данного вопроса и не первый раз реализовываю вот такую структуру приложения:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;├───application
+│   ├───api
+│   ├───core
+│   ├───documentations
+│   ├───second_app
+│   │   └───api
+│   │   └───main.py
+│   ├───third_app
+│   │   └───api
+│   │   └───main.py
+│   ├───exceptions
+│   ├───models
+│   ├───orm
+│   ├───repositories
+│   ├───schemas
+│   ├───services
+│   ├───settings
+│   ├───tests
+│   ├───utils
+│   └───main.py
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;При этом получаем:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;основное приложение, которое запускается, к примеру, вот так &lt;strong&gt;&lt;em&gt;uvicorn application.main:app --host 0.0.0.0 --port 8000&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;второе приложение использует общие модели/сервисы/зависимости, но имеет отдельные эндпоинты/лайфспан и запускается &lt;strong&gt;&lt;em&gt;uvicorn application.second_app.main:app --host 0.0.0.0 --port 8001&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;третье запускается аналогично: &lt;strong&gt;&lt;em&gt;uvicorn application.third_app.main:app --host 0.0.0.0 --port 8002&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;br&gt;
+Теперь можно разнести их либо на одной машине на разных портах, либо на разных, либо в разных контейнерах и тд..&lt;/p&gt;</content><category term="python"></category><category term="python"></category><category term="fastapi"></category><category term="web"></category></entry><entry><title>Robot MK2</title><link href="https://dkurchigin.github.io/robotmk2-review" rel="alternate"></link><published>2023-11-25T16:00:00+03:00</published><updated>2023-11-25T16:00:00+03:00</updated><author><name>dkurchigin</name></author><id>tag:dkurchigin.github.io,2023-11-25:/robotmk2-review</id><summary type="html">&lt;p&gt;Реинкарнация роботизированной платформы&lt;/p&gt;</summary><content type="html">&lt;p&gt;Привет!&lt;/p&gt;
 &lt;p&gt;Сделал нижнюю часть своего робота_V2, остановился на корпусе из фанеры.&lt;/p&gt;
 &lt;p&gt;Прошивку для &lt;strong&gt;Arduino&lt;/strong&gt; пишу на &lt;strong&gt;Rust&lt;/strong&gt;&lt;/p&gt;
 &lt;figure class="video_container"&gt;
