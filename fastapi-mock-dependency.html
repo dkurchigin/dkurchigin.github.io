@@ -38,10 +38,49 @@
                 <div class="row">
                     <div class="col"></div>
                     <ul class="post-list col-12 col-md-8">
-    <h1>Authors on Типичный Python разработчик</h1>
-    <ul>
-        <li><a href="https://dkurchigin.github.io/author/dkurchigin.html">dkurchigin</a> (22)</li>
-    </ul>
+  <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+      <header class="post-header">
+          <h1 class="post-title p-name" itemprop="name headline">FastAPI использование dependency_overrides</h1>
+          <p class="post-meta small">
+              <time class="dt-published" datetime="2024-01-26 16:00:00+03:00" itemprop="datePublished">
+                  Январь 26, 2024
+              </time>
+          </p>
+      </header>
+
+      <div class="post-content e-content" itemprop="articleBody">
+          <p>Всем привет!</p>
+<p>Столкнулся с проблемой использования моков для автотестов в приложении <strong>FastAPI</strong>.</p>
+<p>Есть клиент аутентификации, который используются во вьюхах. Попытки использовать <strong>unittest.patch/monkeypatch</strong> не произвели никакого эффекта. 
+Но оказалось есть выход - использовать <strong>dependency_overrides</strong>. </p>
+<p>Вот как это можно использовать:</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="n">async</span><span class="w"> </span><span class="n">def</span><span class="w"> </span><span class="n">authenticate</span><span class="p">(</span><span class="n">request</span><span class="o">:</span><span class="w"> </span><span class="n">Request</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Authentication</span><span class="o">:</span>
+<span class="w">    </span><span class="s">&quot;&quot;&quot; Основная функция для аутентификации, которую нужно замокать &quot;&quot;&quot;</span>
+<span class="w">       </span><span class="p">...</span>
+<span class="w">       </span><span class="kr">return</span><span class="w"> </span><span class="n">Authentication</span><span class="p">(</span><span class="o">**</span><span class="n">resp</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="n">async</span><span class="w"> </span><span class="n">def</span><span class="w"> </span><span class="n">_mock_authentication</span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Authentication</span><span class="o">:</span>
+<span class="w">    </span><span class="s">&quot;&quot;&quot; Переопределяет возвращаемое значение функции проверки сессии &quot;&quot;&quot;</span>
+<span class="w">    </span><span class="kt">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="s">&#39;user&#39;</span><span class="o">:</span><span class="w"> </span><span class="s">&#39;test_user&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="p">...</span>
+<span class="w">        </span><span class="s">&#39;test&#39;</span><span class="o">:</span><span class="w"> </span><span class="s">&#39;test&#39;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="n">Authentication</span><span class="p">(</span><span class="o">**</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">create_test_app</span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nl">FastAPI</span><span class="p">:</span>
+<span class="w">    </span><span class="ss">&quot;&quot;&quot; Приложение для использование в тестах &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="n">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FastAPI</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;app for tests&#39;</span><span class="p">)</span>
+<span class="w">        </span><span class="n">app</span><span class="p">.</span><span class="n">dependency_overrides</span><span class="o">[</span><span class="n">authenticate</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_mock_authentication</span>
+<span class="w">        </span><span class="p">...</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">app</span>
+</code></pre></div>
+      </div>
+
+      <a class="u-url" href="fastapi-mock-dependency" hidden></a>
+  </article>
                         </ul>
                     <div class="col"></div>
                 </div>
